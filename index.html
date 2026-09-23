@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="S.T.E.D engineering design proposals, abstracts, and methodology showcase.">
+  <title>S.T.E.D | Engineering Design Proposals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="S.T.E.D home">
+        <span class="brand-mark">S</span>
+        <span class="brand-copy"><strong>SUCCESSTEAM</strong><em>ENGINEERING DESIGN</em></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#workspace">Home</a>
+        <a href="proposals.html">Proposals</a>
+        <a href="#cad-modeling">CAD Samples</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#about">About S.T.E.D</a>
+      </nav>
+      <div class="header-status"><span class="status-dot"></span> Proposal lab online</div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="workspace">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span>01</span> Engineering design / proposal workspace</p>
+          <h1>Make the idea<br><span>legible.</span></h1>
+          <p class="hero-intro">A considered space for engineering proposals, technical abstracts, and the thinking that turns a challenge into a buildable direction.</p>
+          <a class="text-link" href="#uploader">Open the proposal workspace <span>↗</span></a>
+        </div>
+        <div class="hero-figure reveal delay-one" aria-label="Abstract structural engineering diagram">
+          <div class="figure-label top-label">STED / 2026</div>
+          <div class="axis axis-x"></div><div class="axis axis-y"></div>
+          <div class="blueprint-node node-a"></div><div class="blueprint-node node-b"></div><div class="blueprint-node node-c"></div>
+          <div class="blueprint-line line-one"></div><div class="blueprint-line line-two"></div><div class="blueprint-line line-three"></div>
+          <div class="figure-center"><span class="center-ring"></span><span class="center-core"></span></div>
+          <div class="figure-label bottom-label">DESIGN INTENT<br><strong>→ 04.28</strong></div>
+          <span class="coordinate c-one">x / 07</span><span class="coordinate c-two">y / 24</span>
+        </div>
+      </section>
+
+      <section class="workspace-panel" id="uploader">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span>02</span> Client preview tool</p><h2>Bring a proposal<br>into focus.</h2></div>
+          <p class="section-note">Explore a prepared engineering proposal preview. Request the full file when the direction fits your brief.</p>
+        </div>
+
+        <div class="upload-grid">
+          <div class="proposal-preview">
+              <div class="proposal-image" id="previewImage"><img id="previewImageAsset" alt="Uploaded proposal design"><span class="image-tag" id="previewLabel">UPLOADED / 01</span></div>
+            <div class="proposal-caption"><div><p class="proposal-kicker">Uploaded proposal</p><h3 id="previewTitle">No proposals published yet</h3><p id="previewMeta">Publish a proposal from the admin platform</p></div><span class="proposal-index" id="previewIndex">0 / 0</span></div>
+            <div class="carousel-controls"><button id="previousProposal" type="button" aria-label="Previous proposal">←</button><div class="carousel-dots" id="carouselDots"></div><button id="nextProposal" type="button" aria-label="Next proposal">→</button></div>
+          </div>
+          <div class="preview-card" id="previewCard">
+            <div class="preview-topline"><span>CLIENT PREVIEW</span><span>AVAILABLE ON REQUEST</span></div>
+            <div class="preview-empty"><div class="empty-grid"></div><p class="preview-abstract" id="previewAbstract">The selected proposal abstract will appear here.</p></div>
+            <button class="preview-button" id="requestButton" type="button"><span>Request this proposal</span><span>↗</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cad-section" id="cad-modeling">
+        <div class="cad-heading"><div><p class="eyebrow"><span>03</span> CAD modeling samples</p><h2>Precision you<br><em>can see.</em></h2></div><div class="cad-intro"><p>Selected modeling directions for mechanical parts, production systems, and built environments. Each study begins with a clean, considered digital form.</p><a class="cad-request" href="https://wa.me/233558775196?text=Hello%20S.T.E.D%2C%20I%20would%20like%20to%20request%20a%20CAD%20modeling%20design." target="_blank" rel="noopener"><span>Request a CAD modeling design</span><span>↗</span></a></div></div>
+        <div class="cad-carousel" aria-label="CAD modeling samples"><button class="cad-carousel-arrow" id="previousCad" type="button" aria-label="Previous CAD sample">←</button><div class="cad-grid" id="cadGrid"></div><button class="cad-carousel-arrow" id="nextCad" type="button" aria-label="Next CAD sample">→</button></div><div class="cad-carousel-dots" id="cadDots"></div>
+      </section>
+
+      <section class="methodology" id="methodology">
+        <div class="methodology-intro"><p class="eyebrow"><span>03</span> A clear path to clarity</p><h2>Good work is<br><em>structured.</em></h2></div>
+        <div class="method-list">
+          <article class="method-item"><span class="method-number">01</span><div><h3>Frame</h3><p>Define the challenge, its context, and the outcome worth designing toward.</p></div><span class="method-arrow">↗</span></article>
+          <article class="method-item"><span class="method-number">02</span><div><h3>Explore</h3><p>Test assumptions with research, systems thinking, and useful constraints.</p></div><span class="method-arrow">↗</span></article>
+          <article class="method-item"><span class="method-number">03</span><div><h3>Propose</h3><p>Translate the strongest direction into a concise, actionable design proposal.</p></div><span class="method-arrow">↗</span></article>
+        </div>
+      </section>
+
+      <section class="about-strip" id="about"><div class="about-stamp">S.T.E.D<br><small>EST. 2026</small></div><p>SuccessTeam Engineering Design is a working language for ambitious ideas — where technical rigor and human understanding meet.</p><div class="contact-links"><a href="mailto:info.sted.eng@gmail.com">info.sted.eng@gmail.com</a><a href="https://wa.me/233558775196" target="_blank" rel="noopener">WhatsApp +233 55 877 5196</a></div></section>
+    </main>
+
+    <footer class="footer"><span>© 2026 S.T.E.D / SuccessTeam Engineering Design</span><span>Design with intent.</span></footer>
+  </div>
+  <div class="modal hidden" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-window"><div class="modal-header"><div><p class="eyebrow"><span>REQUEST</span> Backend notification</p><h2 id="modalTitle">Request received.</h2></div><button class="modal-close" id="modalClose" type="button" aria-label="Close request confirmation">×</button></div><div class="modal-body"><div class="output-cover"><span class="cover-index">S.T.E.D / 01</span><div><p id="modalProposalTitle">SELECTED<br>PROPOSAL</p><span>Uploaded document</span></div><span class="cover-mark">+</span></div><div class="output-copy"><p class="eyebrow">Next step</p><p>Your request will be sent to S.T.E.D on WhatsApp. Use the button below to request the selected proposal file.</p><a class="download-button" id="whatsappRequest" target="_blank" rel="noopener" href="#"><span>Request on WhatsApp</span><span>↗</span></a></div></div></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="database.js"></script>
+  <script src="script.js"></script>
+  <script src="cad.js"></script>
+</body>
+</html>

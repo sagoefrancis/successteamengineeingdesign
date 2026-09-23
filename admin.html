@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="S.T.E.D administrator proposal upload portal.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>S.T.E.D | Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="S.T.E.D home"><span class="brand-mark">S</span><span class="brand-copy"><strong>SUCCESSTEAM</strong><em>ENGINEERING DESIGN</em></span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a href="index.html#workspace">Home</a><a href="proposals.html">Proposals</a><a class="active" href="admin.html">Admin</a><a href="index.html#about">Contact</a></nav>
+      <div class="header-status"><span class="status-dot"></span> Private workspace <button type="button" id="logoutButton" class="cancel-edit" style="margin-left:0.75rem;">Sign out</button></div>
+    </header>
+    <main>
+      <section class="dashboard-heading"><div><p class="eyebrow"><span>ADMIN / 01</span> Publishing operations</p><h1>Good morning,<br><em>designer.</em></h1></div><div class="dashboard-date"><span class="status-dot"></span>Workspace synced<br><strong id="dashboardDate">18 September 2026</strong></div></section>
+      <section class="dashboard-stats" aria-label="Dashboard overview"><div class="stat-card stat-primary"><span>Published proposals</span><strong id="proposalCount">0</strong><small>Visible in public library</small></div><div class="stat-card"><span>Files per proposal</span><strong>02</strong><small>Image + source document</small></div><div class="stat-card"><span>Publishing mode</span><strong>LOCAL</strong><small>Browser workspace storage</small></div></section>
+      <section class="admin-workspace">
+        <form class="admin-form" id="proposalForm">
+          <div class="form-heading"><div><p class="eyebrow"><span>02</span> Create entry</p><h2 id="formTitle">New proposal</h2></div><div class="form-tools"><span class="form-badge" id="formBadge">DRAFT / READY</span><button class="cancel-edit hidden" id="cancelEdit" type="button">Cancel edit</button></div></div>
+          <label>Proposal title<input id="proposalTitle" type="text" placeholder="e.g. Adaptive structural frame" required></label>
+          <label>Design topic<input id="proposalTopic" type="text" placeholder="e.g. Resilient modular construction" required></label>
+          <label>Abstract<textarea id="proposalAbstract" rows="6" placeholder="Write a concise abstract and methodology summary..." required></textarea></label>
+          <div class="admin-file-grid"><label class="file-field"><span class="file-number">01</span><b>Design image</b><small>PNG, JPG or WEBP</small><input id="proposalImage" type="file" accept="image/png,image/jpeg,image/webp"><em id="imageName">Choose image</em></label><label class="file-field"><span class="file-number">02</span><b>Proposal document</b><small>PDF, DOCX or TXT</small><input id="proposalDocument" type="file" accept=".pdf,.doc,.docx,.txt"><em id="documentName">Choose document</em></label></div>
+          <button class="admin-submit" type="submit"><span id="submitLabel">Publish to proposal library</span><span>↗</span></button><p class="form-status" id="formStatus" role="status"></p>
+        </form>
+        <aside class="admin-aside"><p class="eyebrow"><span>03</span> Publishing guide</p><h2>Keep the idea<br><em>clear.</em></h2><p>The public page shows the title, topic, image, and abstract. The source document becomes available as a download once the entry is published.</p><a class="text-link" href="proposals.html">View public library <span>↗</span></a><div class="dashboard-note"><span class="note-icon">i</span><p>Use concise abstracts. A clear first paragraph helps clients understand the design direction quickly.</p></div></aside>
+      </section>
+      <section class="cad-admin-panel">
+        <div class="recent-heading"><div><p class="eyebrow"><span>04</span> CAD library</p><h2>Publish a modeling sample</h2></div><span class="form-badge">PUBLIC / LIVE</span></div>
+        <form class="cad-admin-form" id="cadForm"><label>Sample title<input id="cadTitle" type="text" placeholder="e.g. Mechanical assembly" required></label><label>Short description<input id="cadDescription" type="text" placeholder="e.g. Motion + fit analysis" required></label><label class="cad-file-field">CAD design image<input id="cadImage" type="file" accept="image/png,image/jpeg,image/webp" required><em id="cadImageName">Choose image</em></label><button class="admin-submit" type="submit"><span>Publish CAD sample</span><span>↗</span></button><p class="form-status" id="cadStatus" role="status"></p></form>
+        <div class="cad-admin-list" id="cadAdminList"></div>
+      </section>
+      <section class="recent-panel"><div class="recent-heading"><div><p class="eyebrow"><span>05</span> Content queue</p><h2>Recent uploads</h2></div><a class="text-link" href="proposals.html">Open public view <span>↗</span></a></div><div class="recent-table" id="recentTable"><div class="recent-empty">No proposals published yet. Your next entry will appear here.</div></div></section>
+    </main>
+    <footer class="footer"><span>© 2026 S.T.E.D / SuccessTeam Engineering Design</span><span>Admin access</span></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="database.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
