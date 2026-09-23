@@ -50,7 +50,10 @@
         );
         window.location.href = 'admin.html';
       } catch (err) {
-        loginStatus.textContent = 'Sign in failed. Check your email and password.';
+        const message = err && err.message
+          ? err.message
+          : 'Sign in failed. Check your email and password.';
+        loginStatus.textContent = message;
       }
     });
   </script>

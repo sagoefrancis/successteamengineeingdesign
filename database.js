@@ -8,11 +8,22 @@
 // visitor, not just the browser that published it. All functions here are
 // async — callers must use `await`.
 
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const SUPABASE_CONFIG_MISSING = !SUPABASE_URL || !SUPABASE_ANON_KEY ||
+  SUPABASE_URL.includes('YOUR_PROJECT_ID') || SUPABASE_ANON_KEY.includes('YOUR_ANON_KEY');
+
+const supabaseClient = SUPABASE_CONFIG_MISSING
+  ? null
+  : supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const PROPOSAL_IMAGE_BUCKET = 'proposal-images';
 const PROPOSAL_DOCUMENT_BUCKET = 'proposal-documents';
 const CAD_IMAGE_BUCKET = 'cad-images';
+
+function assertSupabaseConfigured() {
+  if (!supabaseClient) {
+    throw new Error('Supabase is not configured. Update config.js with your project URL and anon key.');
+  }
+}
 
 function uniqueFileName(file) {
   const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, '_');
@@ -148,16 +159,19 @@ async function deleteCadSampleRecord(id, existing) {
 // ---------------- Admin auth ----------------
 
 async function getAdminSession() {
+  assertSupabaseConfigured();
   const { data } = await supabaseClient.auth.getSession();
   return data.session;
 }
 
 async function signInAdmin(email, password) {
+  assertSupabaseConfigured();
   const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
   if (error) throw error;
 }
 
 async function signOutAdmin() {
+  assertSupabaseConfigured();
   await supabaseClient.auth.signOut();
 }
 
