@@ -192,8 +192,6 @@ if (logoutButton) {
 }
 
 (async function init() {
-  const session = await requireAdminSession('login.html');
-  if (!session) return;
   await refreshProposals();
   await refreshCadSamples();
 })();
